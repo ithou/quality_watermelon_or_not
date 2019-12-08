@@ -3,7 +3,7 @@
 <head>
     <script>
         function logout() {
-         var msg = "您真的确定要退出吗？\n请确认！";
+         var msg = "您真的确定要注销吗？";
          if (confirm(msg)==true){
             return true;
          }else{
@@ -40,15 +40,16 @@
     </h2>
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('index') }}">主页</a></li>
+            <li><a href="{{ url_for('watermelon') }}">鉴别</a></li>
             {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('index') }}">你好 {{ user.name }}</a></li>
-                <li><a href="{{ url_for('settings') }}">设置</a></li>
-                <li><a href="{{ url_for('logout') }}" onclick="logout()">登出</a></li>
+                <li><a href="{{ url_for('settings') }}">修改</a></li>
+                <li onclick="return confirm('您确定退出登录吗？')"><a href="{{ url_for('logout') }}">注销</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">登录</a></li>
             {% endif %}
-            <li><a href="{{ url_for('watermelon') }}">西瓜好坏识别</a></li>
+
+
         </ul>
     </nav>
     {% block content %}{% endblock %}

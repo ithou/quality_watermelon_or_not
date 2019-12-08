@@ -9,7 +9,7 @@
             <span class="float-right">
                     {# 为了安全的考虑，一般会使用 POST 请求来提交删除请求，也就是使用表单来实现（而不是创建删除链接） #}
                     <form class="inline-form" method="post" action="{{ url_for('delete_watermelon', history_id=history.id) }}">
-                    <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+                    <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('您确定删除这条记录吗？')">
                     </form>
             </span>
         </li>
