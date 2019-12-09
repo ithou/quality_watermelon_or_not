@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def load_data(rate=0.9):
-    data_path = r'H:\Project\quality_watermelon_or_not\watermelon\data\watermelon3_0.csv'
+    data_path = r'/root/quality_watermelon_or_not/watermelon/data/watermelon3_0.csv'
     df = pd.read_csv(data_path)
     del df['编号']
     del df['密度']
